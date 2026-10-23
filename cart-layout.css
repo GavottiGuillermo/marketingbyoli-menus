@@ -1,0 +1,28 @@
+/* Mantiene legible la lista de productos y desplaza el formulario cuando falta altura. */
+.cart-items {
+  flex: 1 0 clamp(140px, 24vh, 200px);
+  min-height: clamp(140px, 24vh, 200px);
+  scrollbar-gutter: stable;
+}
+
+.mini-emoji {
+  flex: 0 0 65px;
+}
+
+.cart-item-main {
+  min-width: 0;
+}
+
+.checkout {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: none;
+  overscroll-behavior: contain;
+}
+
+@media (max-height: 600px) {
+  .cart-items {
+    flex-basis: 120px;
+    min-height: 120px;
+  }
+}

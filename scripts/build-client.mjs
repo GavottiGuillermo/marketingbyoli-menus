@@ -20,7 +20,7 @@ if (config.business.slug !== slug) throw new Error(`El slug configurado (${confi
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-await Promise.all(['index.html', 'styles.css', 'app.js', 'core.js'].map(file => copyFile(resolve(root, file), resolve(output, file))));
+await Promise.all(['index.html', 'styles.css', 'cart-layout.css', 'app.js', 'core.js'].map(file => copyFile(resolve(root, file), resolve(output, file))));
 await copyFile(configPath, resolve(output, 'config.json'));
 
 try { await cp(resolve(clientRoot, 'assets'), resolve(output, 'assets'), { recursive: true }); }
