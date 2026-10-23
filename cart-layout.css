@@ -1,8 +1,26 @@
-/* Mantiene legible la lista de productos y desplaza el formulario cuando falta altura. */
+/* El panel completo se desplaza para que ningún producto se comprima. */
+.drawer {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.drawer-head {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  flex-shrink: 0;
+  background: var(--page);
+}
+
 .cart-items {
-  flex: 1 0 clamp(140px, 24vh, 200px);
-  min-height: clamp(140px, 24vh, 200px);
-  scrollbar-gutter: stable;
+  flex: none;
+  min-height: 0;
+  overflow: visible;
+}
+
+.cart-item {
+  min-height: 93px;
 }
 
 .mini-emoji {
@@ -13,16 +31,14 @@
   min-width: 0;
 }
 
+.upsell,
 .checkout {
-  flex: 0 1 auto;
-  min-height: 0;
-  max-height: none;
-  overscroll-behavior: contain;
+  flex: none;
+  flex-shrink: 0;
 }
 
-@media (max-height: 600px) {
-  .cart-items {
-    flex-basis: 120px;
-    min-height: 120px;
-  }
+.checkout {
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
 }
