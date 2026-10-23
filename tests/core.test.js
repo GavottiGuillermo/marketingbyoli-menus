@@ -17,6 +17,10 @@ const withPhone = (value = '5491112345678') => ({
   ...raw,
   business: { ...raw.business, whatsapp: value }
 });
+const withoutPhone = () => ({
+  ...raw,
+  business: { ...raw.business, whatsapp: '' }
+});
 
 test('valida y normaliza la configuración vigente', () => {
   const config = validateConfig(raw);
@@ -48,7 +52,7 @@ test('calcula retiro y delivery sin modificar el carrito', () => {
 });
 
 test('valida nombre, dirección, mínimo y WhatsApp antes de continuar', () => {
-  const config = validateConfig(raw);
+  const config = validateConfig(withoutPhone());
   assert.equal(validateCheckout(config, { c1: 1 }, { name: '', mode: ORDER_MODES.PICKUP }).code, 'NAME_REQUIRED');
   assert.equal(validateCheckout(config, { c1: 1 }, { name: 'Oli', mode: ORDER_MODES.DELIVERY, address: '' }).code, 'ADDRESS_REQUIRED');
   assert.equal(validateCheckout(config, { b1: 1 }, { name: 'Oli', mode: ORDER_MODES.DELIVERY, address: 'Calle 1' }).code, 'MINIMUM_DELIVERY');
@@ -83,6 +87,6 @@ test('genera una URL codificada sin afirmar que el pedido fue enviado', () => {
 });
 
 test('no genera enlace si falta un teléfono válido', () => {
-  const config = validateConfig(raw);
+  const config = validateConfig(withoutPhone());
   assert.equal(buildWhatsappUrl(config, 'hola'), null);
 });
