@@ -1,0 +1,16 @@
+{
+  "name": "marketingbyoli-menus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/core.test.js",
+    "validate": "node scripts/validate-client.mjs nori",
+    "build": "node scripts/build-client.mjs",
+    "build:nori": "node scripts/build-client.mjs nori",
+    "serve": "python -m http.server 8000"
+  },
+  "engines": {
+    "node": ">=22.8"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "business": {
+    "name": "NORI · Sushi Bar",
+    "shortName": "nori.",
+    "type": "SUSHI BAR",
+    "slug": "nori",
+    "tagline": "Sushi fresco, buenos momentos.",
+    "whatsapp": "",
+    "currency": "ARS",
+    "locale": "es-AR",
+    "deliveryFee": 2500,
+    "minimumDelivery": 18000,
+    "openingHours": "Todos los días · 19:00 a 23:30"
+  },
+  "theme": {
+    "accent": "#d8a776",
+    "accentText": "#16211c",
+    "hero": "#112320",
+    "heroSoft": "#3b5b48",
+    "page": "#f8f7f3",
+    "surface": "#ffffff",
+    "text": "#1c2825",
+    "action": "#20362c",
+    "whatsapp": "#218453"
+  },
+  "content": {
+    "demoNotice": "DEMO DE MARKETING BY OLI · Productos y precios ficticios",
+    "heroEyebrow": "EL SABOR DE UN BUEN PLAN",
+    "heroTitle": "Sushi que inspira",
+    "heroEmphasis": "momentos.",
+    "heroDescription": "Armá tu pedido, elegí tus favoritos y envialo por WhatsApp en segundos.",
+    "menuEyebrow": "HECHO PARA TUS ANTOJOS",
+    "menuTitle": "Nuestro menú",
+    "menuDescription": "Elegí tu combinación perfecta. Nosotros nos encargamos del resto.",
+    "serviceEyebrow": "¿CÓMO FUNCIONA?",
+    "serviceTitle": "Elegís. Pedís.",
+    "serviceEmphasis": "Disfrutás.",
+    "footerText": "Un buen momento empieza acá.",
+    "footerLegal": "Menú ficticio de demostración · Diseño para Marketing by Oli"
+  },
+  "categories": ["Combos", "Rolls", "Entradas", "Bebidas", "Postres"],
+  "products": [
+    {"id":"c1","name":"Combo Nori · 24 piezas","category":"Combos","description":"Philadelphia, California y salmón fresco. Ideal para compartir.","price":28500,"emoji":"🍣","popular":true},
+    {"id":"c2","name":"Combo Premium · 36 piezas","category":"Combos","description":"Selección de rolls especiales, nigiris y piezas premium.","price":41900,"emoji":"🍱","popular":true},
+    {"id":"c3","name":"Combo Veggie · 20 piezas","category":"Combos","description":"Palta, pepino, zanahoria y mango. Sin pescado.","price":23200,"emoji":"🥑"},
+    {"id":"r1","name":"Philadelphia Roll · 8 piezas","category":"Rolls","description":"Salmón, queso crema y palta.","price":11900,"emoji":"🍥","popular":true},
+    {"id":"r2","name":"California Roll · 8 piezas","category":"Rolls","description":"Kanikama, palta y sésamo.","price":10200,"emoji":"🍣"},
+    {"id":"r3","name":"Crispy Ebi · 8 piezas","category":"Rolls","description":"Langostino rebozado, queso crema y salsa especial.","price":13600,"emoji":"🍤"},
+    {"id":"e1","name":"Gyozas de cerdo · 6 unidades","category":"Entradas","description":"Doradas, con salsa de soja y jengibre.","price":9700,"emoji":"🥟"},
+    {"id":"e2","name":"Edamame","category":"Entradas","description":"Vainas de soja al vapor con sal marina.","price":5900,"emoji":"🫛"},
+    {"id":"b1","name":"Limonada de jengibre","category":"Bebidas","description":"Botella de 500 ml.","price":3900,"emoji":"🍋"},
+    {"id":"b2","name":"Gaseosa 500 ml","category":"Bebidas","description":"Variedad a confirmar por WhatsApp.","price":3200,"emoji":"🥤"},
+    {"id":"p1","name":"Cheesecake de frutos rojos","category":"Postres","description":"Porción individual.","price":6800,"emoji":"🍰"},
+    {"id":"p2","name":"Mochis de helado · 2 unidades","category":"Postres","description":"Postre japonés relleno de helado.","price":7200,"emoji":"🍡"}
+  ],
+  "suggestions": [{"trigger":"c1","recommend":"b1"},{"trigger":"c2","recommend":"e1"},{"trigger":"r1","recommend":"b2"}]
+}

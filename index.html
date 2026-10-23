@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta id="themeColor" name="theme-color" content="#112320"/>
+  <meta name="description" content="Menú digital con carrito y pedido manual por WhatsApp."/>
+  <title>Menú digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div id="demoNotice" class="notice"></div>
+  <header id="hero" class="hero">
+    <nav class="topbar" aria-label="Navegación principal">
+      <span id="brandMark" class="brand-mark"></span>
+      <span id="businessType" class="muted"></span>
+      <button id="topCart" class="cart-link" type="button" aria-controls="drawer">Mi pedido <span id="navCount" aria-live="polite">0</span></button>
+    </nav>
+    <div class="hero-content">
+      <div id="heroEyebrow" class="eyebrow"></div>
+      <h1><span id="heroTitle"></span><br/><em id="heroEmphasis"></em></h1>
+      <p id="heroDescription"></p>
+      <a class="main-cta" href="#menu">Explorar el menú <span aria-hidden="true">↗</span></a>
+      <div class="hours" id="hours"></div>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="sushi-plate"><span>🍣</span><span>🍱</span><span>🍤</span></div></div>
+  </header>
+
+  <main id="menu" class="page-container">
+    <div class="section-intro">
+      <div><span id="menuEyebrow" class="eyebrow dark"></span><h2><span id="menuTitleText"></span><span class="accent-dot">.</span></h2></div>
+      <p id="menuDescription"></p>
+    </div>
+    <div class="filter-row">
+      <div id="categories" class="categories" role="group" aria-label="Filtrar categorías"></div>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar algo rico..." aria-label="Buscar productos"/></label>
+    </div>
+    <p id="resultsStatus" class="sr-only" role="status" aria-live="polite"></p>
+    <div id="productGrid" class="product-grid"></div>
+    <p id="empty" class="empty" hidden>No encontramos productos con esa búsqueda.</p>
+
+    <section class="service">
+      <div><span id="serviceEyebrow" class="eyebrow"></span><h2><span id="serviceTitle"></span><br/><em id="serviceEmphasis"></em></h2></div>
+      <div class="service-steps"><p><b>01</b> Explorá nuestros productos.</p><p><b>02</b> Armá tu carrito y elegí entrega o retiro.</p><p><b>03</b> Abrí WhatsApp y pulsá Enviar.</p></div>
+    </section>
+  </main>
+
+  <footer><div id="footerLogo" class="footer-logo"></div><p id="footerText"></p><small id="footerLegal"></small></footer>
+
+  <button id="floatingCart" class="floating-cart" type="button" aria-controls="drawer" hidden><span>🛍️ Ver mi pedido <small id="floatingCount"></small></span><strong id="floatingTotal"></strong></button>
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow dark">YA CASI ESTÁ</span><h2 id="drawerTitle">Tu pedido<span>.</span></h2></div><button id="closeCart" class="icon-button" type="button" aria-label="Cerrar carrito">✕</button></div>
+    <div id="cartItems" class="cart-items" aria-live="polite"></div>
+    <div id="upsell" class="upsell" hidden></div>
+    <div class="checkout">
+      <fieldset class="order-mode"><legend>Modalidad</legend><label><input type="radio" name="mode" value="Retiro en el local" checked> Retiro</label><label><input type="radio" name="mode" value="Envío a domicilio"> Delivery</label></fieldset>
+      <p id="deliveryPolicy" class="delivery-policy" hidden></p>
+      <label class="field" for="customerName">Tu nombre<input id="customerName" maxlength="70" autocomplete="name" aria-describedby="checkoutError" placeholder="¿A nombre de quién?"/></label>
+      <label id="addressField" class="field" for="address" hidden>Dirección de entrega<input id="address" maxlength="160" autocomplete="street-address" aria-describedby="checkoutError" placeholder="Calle, número, piso..."/></label>
+      <label class="field" for="notes">Aclaraciones<textarea id="notes" rows="2" maxlength="500" placeholder="Sin salsa, horario aproximado, etc."></textarea></label>
+      <div class="summary"><div><span>Productos</span><strong id="subtotal"></strong></div><div id="deliveryRow" hidden><span>Envío estimado</span><strong id="delivery"></strong></div><div class="total"><span>Total estimado</span><strong id="total"></strong></div></div>
+      <p class="checkout-note">WhatsApp abrirá el mensaje listo para revisar. Debés pulsar <strong>Enviar</strong>; el comercio confirmará disponibilidad, costo de envío y total definitivo. Esta demo no procesa pagos.</p>
+      <button id="checkoutButton" class="checkout-button" type="button">Continuar por WhatsApp ↗</button>
+      <p id="checkoutError" class="error" role="alert" hidden></p>
+    </div>
+  </aside>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
